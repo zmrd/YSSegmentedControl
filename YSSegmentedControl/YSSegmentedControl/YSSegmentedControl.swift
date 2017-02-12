@@ -10,7 +10,7 @@ import UIKit
 
 // MARK: - Appearance
 
-public struct YSSegmentedControlAppearance {
+open struct YSSegmentedControlAppearance {
     public var backgroundColor: UIColor
     public var selectedBackgroundColor: UIColor
     public var textColor: UIColor
