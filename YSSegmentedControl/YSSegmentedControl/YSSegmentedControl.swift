@@ -10,7 +10,7 @@ import UIKit
 
 // MARK: - Appearance
 
-open struct YSSegmentedControlAppearance {
+public struct YSSegmentedControlAppearance {
     public var backgroundColor: UIColor
     public var selectedBackgroundColor: UIColor
     public var textColor: UIColor
@@ -22,6 +22,31 @@ open struct YSSegmentedControlAppearance {
     public var bottomLineHeight: CGFloat
     public var selectorHeight: CGFloat
     public var labelTopPadding: CGFloat
+
+    public init(backgroundColor: UIColor = .clear,
+                selectedBackgroundColor: UIColor = .clear,
+                textColor: UIColor = .gray,
+                font: UIFont = .systemFont(ofSize: 15),
+                selectedTextColor: UIColor = .black,
+                selectedFont: UIFont = .systemFont(ofSize: 15),
+                bottomLineColor: UIColor = .black,
+                selectorColor: UIColor = .black,
+                bottomLineHeight: CGFloat = 0.5,
+                selectorHeight: CGFloat = 2,
+                labelTopPadding: CGFloat = 0) {
+
+        self.backgroundColor = backgroundColor
+        self.selectedBackgroundColor = selectedBackgroundColor
+        self.textColor = textColor
+        self.font = font
+        self.selectedTextColor = selectedTextColor
+        self.selectedFont = selectedFont
+        self.bottomLineColor = bottomLineColor
+        self.selectorColor = selectorColor
+        self.bottomLineHeight = bottomLineHeight
+        self.selectorHeight = selectorHeight
+        self.labelTopPadding = labelTopPadding
+    }
 }
 
 // MARK: - Control Item
@@ -219,18 +244,7 @@ public class YSSegmentedControl: UIView {
     }
     
     private func defaultAppearance() {
-        appearance = YSSegmentedControlAppearance(
-            backgroundColor: .clear,
-            selectedBackgroundColor: .clear,
-            textColor: .gray,
-            font: .systemFont(ofSize: 15),
-            selectedTextColor: .black,
-            selectedFont: .systemFont(ofSize: 15),
-            bottomLineColor: .black,
-            selectorColor: .black,
-            bottomLineHeight: 0.5,
-            selectorHeight: 2,
-            labelTopPadding: 0)
+        appearance = YSSegmentedControlAppearance()
     }
     
     // MARK: Select
